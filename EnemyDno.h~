@@ -1,11 +1,15 @@
-#if ndef EnemyDno.h
+#ifndef EnemyDno_h
+#define EnemyDno_h
 class Enemy
 {
 	public:
 		Enemy();
 		void Move();
 		void Die();
-		void Apear();
+		void Apear(); 
+		int GetX();
+		int GetY();
+		int GetSymbol();
 
 	protected:
 		int m_health; // жизьки
