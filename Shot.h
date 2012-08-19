@@ -1,26 +1,28 @@
-#ifndef EnemyDno_h
-#define EnemyDno_h
-#include"Shot.h"
-
-class Enemy
+#ifndef Shot_h
+#define Shot_h
+class Shot
 {
 	public:
-		Enemy();
+		Shot( int iX, int iY );
 		void Move();
 		void Die();
-		void Apear(); 
-		Shot * Shoot();
 		int GetX();
 		int GetY();
 		int GetSymbol();
 
 	protected:
-		int m_health; // жизьки
 		int m_x; // горизонталька
 		int m_y; // вертикалька
-		char m_symbol; // НЛОшка
+		char m_symbol; // пулька
 
-	
+	private:
+		Shot();
+			
+		};
+class Laser
+{
+public: 
+	Shot * Shoot( int iX, int iY );
 };
 #endif
 
