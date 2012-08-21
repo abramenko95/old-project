@@ -2,15 +2,15 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-Shot::Shot( int iX, int iY )
+Shot::Shot( int iY, int iX )
 {
-m_x=iX;
-m_y=iY;
+m_x=iX-2;
+m_y=iY-1;
 m_symbol = '+';
 };
 void Shot::Move()
 {
-	m_y=m_y+2;
+	m_x=m_x+3;
 	
 };
 void Shot::Die()
@@ -30,7 +30,7 @@ int Shot::GetSymbol()
 	return m_symbol;
 };
 
-Shot * Laser::Shoot()
+Shot * Laser::Shoot( int iY, int iX )
 {
-	return new Shot();
+	return new Shot( iY, iX );
 }

@@ -14,11 +14,11 @@ void Enemy::Move()
 {
 	int r;
 	r=rand()%2;
-	if(r=1 && m_x<15)
-		m_x=m_x+1;
-	else if (r=0 && m_x>1)
-		m_x=m_x-1;
-	m_y=m_y+1;
+	if(r==1 && m_y<15)
+		m_y=m_y+1;
+	else if (r==0 && m_y>1)
+		m_y=m_y-1;
+	m_x=m_x+1;
 	
 };
 void Enemy::Die()

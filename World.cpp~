@@ -34,6 +34,16 @@ void World::Draw()
 
 void World::Update()
 {
+
+	for(int i=0; i<m_enemies.size(); i++)
+	{
+		m_enemies[i].Move();
+		m_shots.push_back( m_enemies[i].Shoot() );
+	}
+
+	for( int i = 0; i < m_shots.size(); ++i )
+		m_shots[i]->Move();
+
 	std::vector<char> V;
 	for(int i=0; i<16; i++)
 	{
@@ -58,12 +68,6 @@ void World::Update()
 		m_table[x][y] = m_shots[i]->GetSymbol();	
 	}
 	
-	for(int i=0; i<1; i++)
-	{
-		m_enemies[i].Move();
-		m_shots.push_back( m_enemies[i].Shot() );
-	}
-
 	Draw();
 
 
@@ -78,10 +82,10 @@ int main()
 {
 srand( time(0) );
 World world;
-for(int i = 0; i < 4; ++i)
+while(true) {
 	world.Update();
-
-usleep(100000);
+	usleep(900000);
+}
 
 
 return 0;

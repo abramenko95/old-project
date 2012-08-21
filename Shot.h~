@@ -22,7 +22,7 @@ class Shot
 class Laser
 {
 public: 
-	Shot * Shoot();
+	Shot * Shoot( int iX, int iY );
 };
 #endif
 

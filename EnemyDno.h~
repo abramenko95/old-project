@@ -1,5 +1,5 @@
-#ifndef EnemyDno_h
-#define EnemyDno_h
+#ifndef EnemyDno_h // штуковина штоб 
+#define EnemyDno_h // дважды файл не подключать
 #include"Shot.h"
 
 class Enemy
@@ -16,6 +16,7 @@ class Enemy
 
 	protected:
 		int m_health; // жизьки
+		Laser * m_laser;
 		int m_x; // горизонталька
 		int m_y; // вертикалька
 		char m_symbol; // НЛОшка
